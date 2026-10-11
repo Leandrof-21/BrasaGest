@@ -56,7 +56,7 @@ public class ItemPedido {
     public void setPrecoUnitario(BigDecimal precoUnitario) {
         this.precoUnitario = precoUnitario;
     }
-
+    
     public BigDecimal getSubtotal() {
         return precoUnitario.multiply(BigDecimal.valueOf(quantidade));
     }

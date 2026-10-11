@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.math.BigDecimal;
 
 public class Pedido {
     private int id;
@@ -139,5 +140,13 @@ public class Pedido {
 
     public void setItens(List<ItemPedido> itens) {
         this.itens = itens;
+    }
+    
+    public BigDecimal getValorTotal() {
+        BigDecimal total = BigDecimal.ZERO;
+        for (ItemPedido item : itens) {
+            total = total.add(item.getSubtotal());
+        }
+        return total;
     }
 }
